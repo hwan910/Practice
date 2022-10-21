@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>week2-3</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script>
+    $.ajax({
+      type: "GET",
+      url: "http://spartacodingclub.shop/sparta_api/seoulair",
+      data: {},
+      success: function (response) {
+        let rows = (response['RealtimeCityAir']['row'])
+        for (let i = 0; i < rows.length; i++) {
+          const gu_name = rows[i]['MSRSTE_NM'];
+          const gu_mise = rows[i]['IDEX_MVL'];
+          console.log(gu_name, gu_mise)
+
+        }
+      }
+    })
+
+  </script>
+
+</head>
+
+<body>
+</body>
+
+</html>
