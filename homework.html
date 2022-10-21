@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,83 +14,100 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <title>스파르타코딩클럽 | 1주차 숙제</title>
-  <style>
-    .mytitle {
-        width: 100%;
-        height: 250px;
-        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url(https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/201502/27/htm_20150227222531024.jpg);
-        background-position: center;
-        background-size: cover;
-        margin: auto;
-        color: white;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        font-family: 'Do Hyeon', sans-serif;
-    }
-    .mypost {
-        width: 500px;
-        margin: 20px auto 0px auto;
-        box-shadow: 0px 0px 6px 0px gray;
-        padding: 20px;
-        font-family: 'Do Hyeon', sans-serif;
-    }
-    .mypost > button{
-        margin-top: 10px;
-    }
-    .card{
-        width: 500px;
-        margin: 10px auto 0px auto;
-        box-shadow: 0px 0px 1px 0px gray;
-        padding: 10px;
-        font-family: 'Do Hyeon', sans-serif;
+    <style>
+        .mytitle {
+            width: 100%;
+            height: 250px;
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url(https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/201502/27/htm_20150227222531024.jpg);
+            background-position: center;
+            background-size: cover;
+            margin: auto;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Do Hyeon', sans-serif;
+        }
 
-    }
-  </style>
+        .mypost {
+            width: 500px;
+            margin: 20px auto 0px auto;
+            box-shadow: 0px 0px 6px 0px gray;
+            padding: 20px;
+            font-family: 'Do Hyeon', sans-serif;
+        }
 
+        .mypost>button {
+            margin-top: 10px;
+        }
+
+        .card {
+            width: 500px;
+            margin: 10px auto 0px auto;
+            box-shadow: 0px 0px 1px 0px gray;
+            padding: 10px;
+            font-family: 'Do Hyeon', sans-serif;
+
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "http://spartacodingclub.shop/sparta_api/weather/seoul",
+                data: {},
+                success: function (response) {
+                    $('#temp').text(response['temp'])
+                }
+
+            })
+
+        });
+    </script>
 </head>
 
 <body>
-<div class="mytitle">
-    <h1>명곡 추천</h1>
-</div>
-<div class="mypost">
-    <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">닉네임</label>
+    <div class="mytitle">
+        <h1>명곡 추천</h1>
+        <p>현재기온 : <span id="temp">00.0</span>도</p>
     </div>
-    <div class="form-floating">
-        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
-                  style="height: 100px"></textarea>
-        <label for="floatingTextarea2">노래명/가수</label>
+    <div class="mypost">
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">닉네임</label>
+        </div>
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                style="height: 100px"></textarea>
+            <label for="floatingTextarea2">노래명/가수</label>
+        </div>
+        <button type="button" class="btn btn-dark">명곡 추천하기</button>
     </div>
-    <button type="button" class="btn btn-dark">명곡 추천하기</button>
-</div>
-<div class="card">
-    <div class="card-body">
-        <blockquote class="blockquote mb-0">
-            <p>브라보마이라이프</p>
-            <footer class="blockquote-footer">봄여름가을겨울 </footer>
-        </blockquote>
+    <div class="card">
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>브라보마이라이프</p>
+                <footer class="blockquote-footer">봄여름가을겨울 </footer>
+            </blockquote>
+        </div>
     </div>
-</div>
-<div class="card">
-    <div class="card-body">
-        <blockquote class="blockquote mb-0">
-            <p>브라보마이라이프</p>
-            <footer class="blockquote-footer">봄여름가을겨울 </footer>
-        </blockquote>
+    <div class="card">
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>브라보마이라이프</p>
+                <footer class="blockquote-footer">봄여름가을겨울 </footer>
+            </blockquote>
+        </div>
     </div>
-</div>
-<div class="card">
-    <div class="card-body">
-        <blockquote class="blockquote mb-0">
-            <p>브라보마이라이프</p>
-            <footer class="blockquote-footer">봄여름가을겨울 </footer>
-        </blockquote>
+    <div class="card">
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>브라보마이라이프</p>
+                <footer class="blockquote-footer">봄여름가을겨울 </footer>
+            </blockquote>
+        </div>
     </div>
-</div>
 
 </body>
-
